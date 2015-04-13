@@ -1,7 +1,9 @@
 package util.file;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -66,6 +68,29 @@ public class FileUtil extends ArrayList<String>{
 		return sb.toString();
 		
 	}
+	/**
+	 * 读取二进制文件
+	 * @param fileName
+	 * @return
+	 * @throws IOException 
+	 */
+	public static byte[] readBinary(String fileName) throws IOException {
+		
+			BufferedInputStream bis = new BufferedInputStream(
+					new FileInputStream(
+							new File(fileName)));
+		try {	
+			byte[] res = new byte[bis.available()];
+			bis.read(res);
+			return res;
+		}finally{
+			bis.close();
+		}
+		
+		
+	}
+	
+	
 	/**
 	 * 向文件中写入数据
 	 * @param fileName
