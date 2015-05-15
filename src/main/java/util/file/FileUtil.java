@@ -10,8 +10,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.TreeSet;
-
 /**
  * 文件的相关操作
  * 创建， 删除， 复制， 读， 写
@@ -89,8 +87,6 @@ public class FileUtil extends ArrayList<String>{
 		
 		
 	}
-	
-	
 	/**
 	 * 向文件中写入数据
 	 * @param fileName
@@ -132,9 +128,6 @@ public class FileUtil extends ArrayList<String>{
 	
 	
 	public static void main(String[] args) throws Exception {
-		TreeSet<String> s = new TreeSet<String>(
-				new FileUtil("pom.xml"));
-		System.out.println(s.headSet("a"));
 	}
 
 }
